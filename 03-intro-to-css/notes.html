@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notes for Intro to CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Intro to CSS</h1>
+
+    <h2> 1. Starting with style</h2>
+    <p>
+        <ul>
+            <li>CSS is used to change the color or the layout of a web page, among other things</li>
+        </ul>
+    </p>
+
+    <h2> 2. Developer tools</h2>
+    <p>
+        <ul>
+            <li>Hotkey for dev tools is ALT + CMD + J</li>
+            <li>The view that you see in Elements is actually a <strong>picture of the way the browser thinks about the page internally</strong> - not just a copy of the original HTML file.</li>
+        </ul>
+    </p>
+
+    <h2> 3. Text to trees</h2>
+    <p>
+        <ul>
+            <li>The particular tree structure the browser creates from HTML is called the DOM or Document Object Model</li>
+        </ul>
+    </p>
+
+    <h2> 4. Tree Structure</h2>
+    <p>
+        <ul>
+            <li>Nodes are the different elements and the branches are the relationships between the nodes</li>
+            <li>The tree always has a root which is always the HTML element</li>
+            <li>Tree structure is not a diagram... it's a data structure - a way that information can be organized</li>
+            <li>Rules for trees
+                <ol>
+                    <li>A tree has a root node</li>
+                    <li>Each node can have branches that lead to other nodes (its children)</li>
+                    <li>Each node has only one parent (except the root)</li>
+                </ol>
+            </li>
+            <li>DOM is the tree structure of HTML</li>
+        </ul>
+    </p>
+
+    <h2> 5. Trees to boxes</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+
+    <h2> 6. Styling HTML directly</h2>
+    <p>
+        <ul>
+            <li>The first way is to use the style attribute to apply style directly to an HTML element</li>
+            <li>The second way is to use the style element among with a ruleset</li>
+            <li>When styles are applied directly to an HTML element using the style attribute, these are called inline styles</li>
+        </ul>
+    </p>
+
+    <h2> 7. Practice - Inline styles</h2>
+    <p>
+        <ul>
+            <li>The semicolon must be used to separate style attributes</li>
+        </ul>
+    </p>
+
+    <h2> 8. Practice - Multiple styles</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+
+    <h2> 9. Practice - Quotes or no quotes?</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+            <li>Without the quotes, the browser can sometimes still figure out where the attribute value ends, so it's possible to get away with leaving the quotes off, in some cases</li>
+            <li>If there is a space (and no quotes) then the browser will get confused and think the attribute value has ended right before that space</li>
+        </ul>
+    </p>
+
+    <h2> 10. Styling HTML separately</h2>
+    <p>
+        <ul>
+            <li>Create a style element or use CSS</li>
+        </ul>
+    </p>
+
+    <h2> 11. Practice - Styling HTML separately</h2>
+    <p>
+        <ul>
+            <li>To signal to the browser that the code is in the CSS language, it needs to be put inside a style element or used as the value of a style attribute</li>
+        </ul>
+    </p>
+
+    <h2> 12. CSS syntax</h2>
+    <p>
+        <ul>
+            <li>CSS syntax is made up of two parts: selector and declaration block</li>
+        </ul>
+    </p>
+
+    <h2> 13. Selectors: Type</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+
+    <h2> 14. Selectors: Class and ID</h2>
+    <p>
+        <ul>
+            <li>Class is used when there could be several elements that need the same style</li>
+            <li>Id is used when there's only one element to apply it to</li>
+        </ul>
+    </p>
+
+    <h2> 15. Selectors: Combining</h2>
+    <p>
+        <ul>
+            <li>Descendant selector is only one of many ways to combine selectors</li>
+            <li>It is really common to have the same CSS rules for all pages on a web site; and if a particular page does not make use of a particular rule, that's okay</li>
+        </ul>
+    </p>
+
+    <h2> 16. Vocabulary review</h2>
+    <p>
+        <ul>
+            <li>Downloaded reference sheet</li>
+        </ul>
+    </p>
+
+    <h2> 17. Selectors review</h2>
+    <p>
+        <ul>
+            <li>Downloaded reference sheet</li>
+        </ul>
+    </p>
+
+    <h2> 18. Practice - Selectors</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+
+    <h2> 19. Practice - Class selectors</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+
+    <h2> 20. Practice - More class selectors</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+
+    <h2> 21. What's so "cascading" about CSS?</h2>
+    <p>
+        <ul>
+            <li>The term "cascading" in <em>Cascading Style Sheets</em> refers to the way that style properties "cascade" down the DOM tree, starting at the top</li>
+        </ul>
+    </p>
+
+    <h2> 22. Practice - Cascading styles</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+
+    <h2> 23. Units</h2>
+    <p>
+        <ul>
+            <li>Pixel (px) is the basic unit for size</li>
+            <li>1 inch = 96 pixels, 1 centimeter = 37.8 pixels</li>
+            <li>The CSS unit 'em' is named for the size of the letter "M", and comes from print typography</li>
+        </ul>
+    </p>
+
+    <h2> 24. Boxes</h2>
+    <p>
+        <ul>
+            <li>width and height of content -> padding -> border -> margin</li>
+        </ul>
+    </p>
+
+    <h2> 25. Practice - Boxes</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+
+    <h2> 26. Practice - Floating boxes</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+
+    <h2> 27. Practice - Boxes inside boxes</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+  
+    <h2> 28. Percentages</h2>
+    <p>
+        <ul>
+            <li>The width property only changes the width of the contents; the padding, border, and margin are not included in the width (so they add extra width around the sides of the box)</li>
+        </ul>
+    </p>
+
+    <h2> 29. Learning more CSS</h2>
+    <p>
+        <ul>
+            <li>MDN CSS reference here: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference</li>
+        </ul>
+    </p>
+
+    <h2> 30. Separating style</h2>
+    <p>
+        <ul>
+            <li>To link to a stylesheet in your HTML file, add a link element to the head of the HTML file</li>
+        </ul>
+    </p>
+
+    <h2> 31. Practice - Three ways to style</h2>
+    <p>
+        <ul>
+            <li>Completed exercises</li>
+        </ul>
+    </p>
+
+    <h2> 32. Color</h2>
+    <p>
+        <ul>
+            <li>Computers make colors by mixing light with the primary colors red, green, blue</li>
+            <li>To make gray, use equal amounts of red, green, and blue, but if all three colors are equal to zero, you'll get black; and if all three are the maximum value (255, FF, or 100%) you'll get white</li>
+        </ul>
+    </p>
+
+    <h2> 33. Practice - Color</h2>
+    <p>
+        <ul>
+            <li></li>
+        </ul>
+    </p>
+</body>
+</html>
