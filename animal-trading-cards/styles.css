@@ -1,1 +1,87 @@
-/* add your CSS here */
+body {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+h3 {
+    font-size: 25px;
+    margin: 20px 0 0 25px;
+}
+.card {
+    border: 8px solid rgb(210, 195, 45);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 350px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    text-align: justify;
+    background: linear-gradient(to right bottom, rgba(126,213,111,0.8), rgba(40,180,133,0.8));
+}
+
+.fact {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    margin: 0;
+    font-size: 14px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+}
+
+.profile {
+    width: 300px;
+    height: 200px;
+    margin: 55px 20px 10px 20px;
+    border: 6px solid rgb(210, 195, 45);
+    border-radius: 8px;
+}
+
+.type {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+    left: 75px;
+    top: 8px;
+}
+
+
+.information {
+    border: 3px solid rgb(210, 195, 45);
+    border-radius: 8px;
+    margin: 10px 20px 10px 20px;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.description {
+    font-size: 14px;
+}
+.border-bottom {
+    padding-bottom: 15px;
+    border-bottom: 1.5px solid rgb(210, 195, 45);
+}
+
+.signature {
+    font-size: 9px;
+    margin: 0 20px 5px 20px;
+    text-align: right;
+}
