@@ -1,0 +1,19 @@
+html {
+    margin: 1em 2em;
+}
+
+body {
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: flex;
+}
+
+h1, h2 {
+    font-family: 'Lato', sans-serif;
+    margin-bottom: .25em;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
