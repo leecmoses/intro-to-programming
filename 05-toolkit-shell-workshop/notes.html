@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Notes for Toolkit: Shell Workshop</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:700|Roboto:300" rel="stylesheet">
 </head>
 <body>
@@ -17,9 +17,158 @@
         <p>
             <ul>
                 <li>A <strong>shell</strong> is simply the outermost layer of an operating system, it's designed to provide a way for you to interact with the tools and servies that your operating system provides</li>
+                <li>One of the most widely used shells is called <strong>BASH</strong>, Mac and Linux computers use the BASH shell by default</li>
+                <li>The <em>shell</em> is the outermost layer of your operating system</li>
+                <li><em>CLI</em> is a user interface where you give instructions to the computer by entering lines of text</li>
+                <li><em>GUI</em> is a user interface where you give instructions to the computer by interacting with things like windows, menus, icons, and buttons</li>
             </ul>
         </p>
     </div>
 
+    <div>
+        <h2> 2. Windows: Installing Git Bash</h2>
+        <p>
+            <ul>
+                <li>Download Git <a href="https://git-scm.com/download/win" target="blank">here</a></li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 3. Your first command (echo)</h2>
+        <p>
+            <ul>
+                <li><em>echo</em> in shell is similar to <em>print</em> and <em>console.log</em> in Python and JavaScript, respectively</li>
+                <li><strong>!!</strong> is one way you could re-run your last command</li>
+                <li>Another way is to use the up and down arrow to cycle through recent commands</li>
+                <li>Use the left and right arrow keys to move the cursor</li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 4. Variables</h2>
+        <p>
+            <ul>
+                <li>In BASH to assign values to variables use the <strong>=</strong> operator without spaces between the the variable name, operator, and value</li>
+                <li>To refer back to the variable, the dollar sign <strong>$</strong> must be used in front of the variable name</li>
+                <li>The command line <strong>echo $COLUMNS x $LINES</strong> returns the size of the terminal window</li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 5. Navigating directories (1/2)</h2>
+        <p>
+            <ul>
+                <li><strong>ls</strong> is short for <em>list</em>, this command lists the contents of the current directory</li>
+                <li><strong>cd</strong> stands for <em>change directory</em>, the command is use to move to another directory</li>
+                <li>BASH is a <strong>case sensitive</strong> language</li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 6. Navigating directories (2/2)</h2>
+        <p>
+            <ul>
+                <li><strong>pwd</strong> stands for <em>print working directory</em></li>
+                <li><strong>home directory</strong> is the current user's top-level directory (the directory that has all of the user's other directories inside of it</li>
+                <li><strong>ls ~</strong> will list the home directory regardless of current working directory</li>
+                <li><strong>.</strong> for working directory</li>
+                <li><strong>..</strong> for parent directory</li>
+                <li><strong>~</strong> for home directory</li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 7. Options</h2>
+        <p>
+            <ul>
+                <li><strong>-l</strong> stands for <em>long</em> as in long format, it gives a more detailed list than <strong>ls</strong> by itself</li>
+                <li>The <em>-l</em> option will give the date that each file was last modified, as well as the size of the file (in bytes)</li>
+                <li><strong>*</strong> is used to recognize patterns, e.g. <em>ls *pdf</em> is used to pull a list of all the pdf files</li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 8. Organizing your files (mkdir, mv)</h2>
+        <p>
+            <ul>
+                <li><strong>mkdir</strong> is used to create a new directory</li>
+                <li><strong>mv</strong> is used to mv a file</li>
+                <li>When you want to move files around on your computer, you have some different options - you could use your computer's graphical shell, or you could use the computer's text shell</li>
+                <li>Both do a lot of the same things, but in some cases using the text shell is way faster</li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 9. Downloading (curl)</h2>
+        <p>
+            <ul>
+                <li>The <strong>curl</strong> command can be used to download a file from the Web</li>
+                <li>By default, it will download the file and display the contents in the terminal</li>
+                <li>CURL -> C URL -> see URL 😂</li>
+                <li>It is a good habit to put single quotes around the URL since a lot of URLs have special characters in them, such as the & sign, which have unusual meanings to the shell</li>
+                <li>If you add the <strong>-L</strong> option to curl, it will first follow any redirects, and then download the file from wherever the redirects ultimately go</li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 10. Viewing files (cat, less)</h2>
+        <p>
+            <ul>
+                <li>The <em>cat</em> command will display the full contents of the file</li>
+                <li><strong>cat</strong> is short for concatenate</li>
+                <li>The limitation of the cat command is that files often have more text than what will fit on the screen at once</li>
+                <li>The <em>less</em> command solves this issue by formatting it to show only what is able to fit on the screen at once</li>
+                <li>Once you've started the <strong>less</strong> program, you can use some different keys to move around</li>
+                <ul>
+                    <li><strong>Spacebar or down arrow</strong> to scroll down</li>
+                    <li><strong>b key or up arrow</strong> to scroll up</li>
+                    <li><strong>Forward slash /</strong> to search</li>
+                    <li><strong>q key</strong> to exit less</li>
+                </ul>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 11. Removing things (rm, rmdir)</h2>
+        <p>
+            <ul>
+                <li>️⚠️ The <strong>rm and rmdir</strong> commands permanently delete files, so be careful not to delete something important ⚠️</li>
+                <li> The <strong>-i</strong> option after rm command allows double-checking before deleting a file permanently</li>
+                <li>When using the <em>rmdir</em> command, it will only delete a directory that is <em>empty</em>, and if the directory has files inside, you'll get an error saying 'Directory not empty'.</li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 12. Review</h2>
+        <p>
+            <ul>
+                <li>Completed exercises</li>
+            </ul>
+        </p>
+    </div>
+
+    <div>
+        <h2> 13. Keep learning!</h2>
+        <p>
+            <ul>
+                <li>Shell resources:</li>
+                <ul>
+                    <li><a href="https://www.bash.academy/" target="blank">The Bash Academy</a></li>
+                    <li><a href="http://www.tldp.org/LDP/Bash-Beginners-Guide/html/" target="blank">Bash Beginners Guide</a></li>
+                    <li><a href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html" target="blank">Bash Programming HOWTO</a></li>
+                </ul>
+            </ul>
+        </p>
+    </div>
 </body>
 </html>
