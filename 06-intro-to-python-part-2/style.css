@@ -1,0 +1,29 @@
+html {
+    margin: 1em 3em;
+}
+
+body {
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: flex;
+    font-family: 'Roboto', sans-serif;  
+    font-weight: 300; 
+}
+
+h1, h2 {
+    font-family: 'Lato', sans-serif;
+    margin-bottom: .25em;
+}
+
+h3 {
+    padding: .5em 1em;
+    border-radius: .25em;
+    background-color: rgba(211, 211, 211, 0.35);
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+    border-bottom: .1em solid blue;
+}
