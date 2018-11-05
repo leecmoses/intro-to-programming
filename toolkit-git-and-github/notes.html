@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notes for Toolkit: Git and GitHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:700|Roboto:300,400,500," rel="stylesheet">
+</head>
+<body>
+    <h1><span>&lt/&gt</span> Toolkit: Git and GitHub</h1>
+
+    <div class="section">
+        <h2><span>#</span> What is Version Control?</h2>
+        <div>
+            <h3>1. What is Version Control</h3>
+            <ul>
+                <li>A component of software configuration management, <strong>version control</strong>, also known as <strong>revision control</strong> or <strong>source control</strong>, is the management of changes to documents, computer programs, large web sites, and other collections of information</li>
+                <li>Three of the most popular version control systems are:
+                    <ul>
+                        <li>Git</li>
+                        <li>Subversion</li>
+                        <li>Mercurial</li>
+                    </ul>
+                </li>
+                <li>There are two main types of version control system models:
+                    <ul>
+                        <li>the <em>centralized model</em> all users connect to a central, master repository</li>
+                        <li>the <em>distributed model</em> each user has the entire repository on their computer</li>
+                    </ul>
+                </li>
+                <li><strong>Git</strong> is the version control tool and <strong>GitHub</strong> is the service that hosts Git projects</li>
+                <li>Version control systems aim to solve a specific problem that programmers face: "storing and sharing multiple versions of code files"</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Version Control in Daily Use</h3>
+            <ul>
+                <li>Watched video clips</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Git and Version Control Terminology</h3>
+            <ul>
+                <li><strong>Version Control System / Source Code Manager</strong>: VCS or SCM is a tool that manages different versions of source code</li>
+                <li><strong>Commit</strong>: Git thinks of its data like a set of snapshots of a mini filesystem, everytime you commit (save the state of your project in Git), it basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot</li>
+                <ul>
+                    <li>Think of it as a save point in a game - it saves your project's files and any information about them</li>
+                    <li>Everything you do in Git is to help you make commits, so a commit is <em>the fundamental unit</em> in Git</li>
+                    <li>When a commit is made, only the changes that are in the Staging Index are saved in the repository</li>
+                </ul>
+                <li><strong>Repository / repo</strong>: a directory which contains your project work, as well as a few files (hidden by default on Mac OS X) which are used to communicate with Git</li>
+                <ul>
+                    <li>Repos can exist either locally on your computer or as a remote copy on another computer</li>
+                    <li>A repository is made up of commits</li>
+                </ul>
+                <li><strong>Working Directory</strong>: is the files that you see in your computer's file system</li>
+                <ul>
+                    <li>When you open your project files up on a code editor, you're working with files in the working directory</li>
+                    <li>This is in contrast to the files that have been saved (in commits) in the repository</li>
+                </ul>
+                <li><strong>Checkout</strong>: is when content in the repository has been copied to the Working Directory</li>
+                <li><strong>SHA</strong>: is basically an ID number for each commit, "SHA" is shorthand for "Secure Hash Algorithm"</li>
+                <li><strong>Branch</strong>: is when a new line of development is created that diverges from the main line of development, this alternative line of development can continue without altering the main line</li>
+                <li>The key terms can be found <a href="http://video.udacity-data.com.s3.amazonaws.com/topher/2017/March/58d31eb5_ud123-git-keyterms/ud123-git-keyterms.pdf">here</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Mac/Linux Setup</h3>
+            <ul>
+                <li>Watched video clips and configured terminal</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Window Setup</h3>
+            <ul>
+                <li>Not relevant at the moment</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Onward</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span>#</span> Create a Git Repo</h2>
+        <div>
+            <h3>1. Intro</h3>
+            <ul>
+                <li><strong>git init</strong> is used to create brand new repositories on your computer</li>
+                <li><strong>git clone</strong> is used to copy existing repos from somewhere else to your local computer</li>
+                <li><strong>git status</strong> is used to check the status of a repo</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Create a Repo From Scratch</h3>
+            <ul>
+                <li>Running the <strong>git init</strong> command sets up all the necessary files and directories that Git will use to keep track of everything, all these files are stored in a directory called <strong>.git</strong> (notice the . at the beginning - that means it'll be a hidden directory on Mac/Linux)</li>
+                <li>Brief synopsis on each of the items in the .git directory:</li>
+                <ul>
+                    <li><strong>config file</strong>: where all <em>project specific</em> configuration settings are stored</li>
+                    <li><strong>description file</strong>: this file is only used by the GitWeb program, so we can ignore it</li>
+                    <li><strong>hooks directory</strong>: this is where we could place client-side or server-side scripts that we can use to hook into Git's different lifecycle events</li>
+                    <li><strong>info directory</strong>: contains the global exclues file</li>
+                    <li><strong>objects directory</strong>: this directory will store all of the commits we make</li>
+                    <li><strong>refs directory</strong>: this directory holds pointers to commits (basically the "branches" and "tags")</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Clone An Existing Repo</h3>
+            <ul>
+                <li>$ git clone &ltpath-to-repository-to-clone&gt</li>
+                <ul>
+                    <li>takes the path to an existing repo</li>
+                    <li>by default will create a directory with the same name as the repo that's being cloned</li>
+                    <li>can be given a second argument that will be used as the name of the directory</li>
+                    <li>will create the new repo inside of the current working directory</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Determine A Repo's Status</h3>
+            <ul>
+                <li><strong>git status</strong> command will display a lot of information depending on the state of your files, the working directory, and the repository</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Outro</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2><span>#</span> Review a Repo's History</h2>
+        <div>
+            <h3>1. Intro</h3>
+            <ul>
+                <li><strong>git log</strong> displays information about the existing commits</li>
+                <li><strong>git show</strong> displays information about the given commit</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Displaying A Repository's Commits</h3>
+            <ul>
+                <li><em>Always</em> run the git status command, especially when returning to a project after a period of time</li>
+                <li>to scroll <strong>down</strong>, press</li>
+                <ul>
+                    <li>j or down arrow key to move down one line at a time</li>
+                    <li>d to move by half the page screen</li>
+                    <li>f to move by a whole page screen</li>
+                </ul>
+                <li>to scroll <strong>up</strong>, press</li>
+                <ul>
+                    <li>k or up arrow key to move up one line at a time</li>
+                    <li>u to move by half the page screen</li>
+                    <li>b to move by a whole page screen</li>
+                </ul>
+                <li>press q to <strong>quit</strong> out of the log (returns tot he regular command prompt)</li>
+                <li>By <em>default</em>, the git log command displays: the SHA, author, date, and message of every commit in the repository</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Changing How Git Log Displays Information</h3>
+            <ul>
+                <li>$ git log --oneline</li>
+                <ul>
+                    <li>The --oneline flag shows just the short SHA and the commit message</li>
+                    <li>lists one commit per line</li>
+                    <li>shows the first 7 characters of the commit's SHA</li>
+                    <li>shows the commit's message</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Viewing Modified Files</h3>
+            <ul>
+                <li>$ git log --stat</li>
+                <ul>
+                    <li>displays the file(s) that have been modified</li>
+                    <li>displays the number of lines that have been added/removed</li>
+                    <li>displays a summary line with the total number of modified files and lines that have been added/removed</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Viewing File Changes</h3>
+            <ul>
+                <li>$ git log -p</li>
+                <ul>
+                    <li>The -p flag (which is the same as the --patch flag) is used to alter how git log displays information</li>
+                    <li>displays the files that have been modified</li>
+                    <li>displays the location of the lines that have been added/removed</li>
+                    <li>displays the actual changes that have been made</li>
+                </ul>
+                <li>both <strong>git log -p --stat</strong> and <strong>git log --stat -p</strong> displays with the stats info above the patch info</li>
+                <li>the <strong>-w</strong> flag ignores the whitespace changes in the patch information</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Viewing A Specific Commit</h3>
+            <ul>
+                <li>By supplying a SHA, the git log -p command will start at that commit</li>
+                <li>$ git show</li>
+                <ul>
+                    <li>Displays only the most recent commit</li>
+                    <li>Typically, a SHA is provided as a final argument</li>
+                    <li>The output of the 'git show' command is exactly the same as the 'git log -p' command</li>
+                    <li>By default the 'git show' displays: the commit, author, date, commit message, patch information</li>
+                </ul>
+                <li>'git show' can be combined with most of the other flags we've looked at:</li>
+                <ul>
+                    <li>'--stat' - to show the how many many files were changed and the number of lines that were added/removed</li>
+                    <li>'-p' or '--patch' - this the default, but if '--stat' is used, the patch won't display, so pass '-p' to add it again</li>
+                    <li>'-w' - to ignore changes to whitespace</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. Outro</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2><span>#</span> Add Commits to a Repo</h2>
+        <div>
+            <h3>1. Intro</h3>
+            <ul>
+                <li><strong>git add</strong> adds files from the working directory to the staging index</li>
+                <li><strong>git commit</strong> takes files from the staging index and save them in the repository</li>
+                <li><strong>git diff</strong> displays the difference between two versions of a file</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Git Add</h3>
+            <ul>
+                <li>Running <strong>git init</strong> multiple times doesn't cause any problems since it just re-initializes the Git directory</li>
+                <li>Use <strong>git rm --cached &ltfile&gt</strong> to unstage</li>
+                <ul>
+                    <li>It is not like the shell's <strong>rm</strong>command</li>
+                    <li><strong>git rm --cached &ltfile&gt</strong> will not destroy any of your work; it just removes it from the Staging Index</li>
+                </ul>
+                <li><strong>$ git add .</strong></li>
+                <ul>
+                    <li>The period refers to the current directory and can be used as a shortcut to refer to all files and directories (including all nested files and directories)</li>
+                    <li>Becareful to not accidentally include more files than you meant to</li>
+                </ul>
+                <li><strong>$ git add &ltfile1&gt &ltfile2&gt ... &ltfileN&gt</strong></li>
+                <ul>
+                    <li>takes a space-separated list of file names</li>
+                    <li>alternatively, the period can be used in place of a list of files to tell Git to add the current directory (and all nested files)</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Git Commit</h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="section">
+        <h2><span>#</span> Tagging, Branching, and Merging</h2>
+    </div>
+
+    <div class="section">
+        <h2><span>#</span> Undoing Changes</h2>
+    </div>
+
+    <div class="section">
+        <h2><span>#</span> Working with Remotes</h2>
+    </div>
+
+    <div class="section">
+        <h2><span>#</span> Working on Another Developer's Repository</h2>
+    </div>
+
+    <div class="section">
+        <h2><span>#</span> Staying in Sync with a Remote Repository</h2>
+    </div>
+</body>
+</html>
