@@ -1,4 +1,4 @@
-#
+# ***** Working with files *****
 # 8. Taking apart filenames
 #
 # my solution
@@ -16,8 +16,19 @@
 # another alternative solution using the split method
 
 
-def extract_place(filename):
-    return filename.split("_")[1]
+# def extract_place(filename):
+#     return filename.split("_")[1]
 
 
-print(extract_place("2018-06-06_MountainView_16:20:00.jpg"))
+# print(extract_place("2018-06-06_MountainView_16:20:00.jpg"))
+
+# ***** Web APIs *****
+# 6. Try and exceptions
+# import requests
+
+# try:
+#     r = requests.get("http://www.udacity.com")
+#     print(r.status_code)
+# except requests.exceptions.ConnectionError:
+#     print("Could not connect to server.")
+

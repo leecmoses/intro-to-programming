@@ -202,8 +202,142 @@
     <div class="section">
         <h2><span>#</span> Web APIs</h2>
         <div>
-
+            <h3>1. Welcome to Web APIs</h3>
+            <ul>
+                <li><strong>API (Application Programming Interface)</strong> is an interface that has been created to help two different applications interact with one another</li>
+            </ul>
         </div>
+
+        <div>
+            <h3>2. Getting the weather</h3>
+            <ul>
+                <li>Browsers replace the <em>space</em> character with <strong>%20</strong> because spaces in URLs can introduce errors and ambiguity</li>
+                <li>Tim Berners-Lee is the investor of the World Wide Web and he laid out the standards for URLs</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. The requests module</h3>
+            <ul>
+                <li>Watched video clip and completed exercises</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Making a request</h3>
+            <ul>
+                <li>Import the requests module then <strong>r = requests.get('URL')</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. What can go wrong?</h3>
+            <ul>
+                <li><strong>Non-deterministic</strong> means something different could happen each time</li>
+                <li>Network checklist: wi-fi, internet service, server address, server running, server understands request, and code understands response</li>
+                <li><strong>Status code 404</strong> is when the code sent a request to the server, but the server could not find the page</li>
+                <li><strong>Status code 200</strong> is when the code sent a request to the server, and the server successfully sent back the requested data</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Try and exceptions</h3>
+            <ul>
+                <li><strong>NameError</strong> and <strong>TypeError</strong> are examples of exceptions, exceptions signals that an error has occurred</li>
+                <li>Error is a generic term while an exception is an error that is detected by Python when running the code</li>
+                <li>Python dects syntax erros before the code runs, so the try and exception statements will not catch the error</li>
+                <li>Python may <strong>raise an exception</strong> while the code is running</li>
+                <li>When Python raises an exception, the <strong>default</strong> behavior is for the program to exit (i.e., crash) and display a traceback</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. What is JSON?</h3>
+            <ul>
+                <li><strong>JSON (JavaScript Object Notation)</strong> is just a format - it's a way to structure data so that it's easy to make use of data from code written in many different languages (including Python)</li>
+                <li>JSON is easy for humans to read and write, and it is easy for machines to parse and generate</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>8. Dictionaries (1/2)</h3>
+            <ul>
+                <li>A <strong>dictionary</strong> is similiar to a list but instead of using indices it uses keys to retrieve a value, also it uses curly brackets {}</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>9. Dictionaries (2/2)</h3>
+            <ul>
+                <li>A <strong>KeyError</strong> occurs when trying to access a key in a dictionary that doesn't exist</li>
+                <ul>
+                    <li>KeyErrors can be catched using a try and except statement</li>
+                </ul>
+                <li>If d is a dictionary, then x in d asks whether x is a key in the dictionary; that is, whether d[x] will be a valid lookup</li>
+                <li>Strings are <em>immutable</em> while lists and dictionaries are <em>mutable</em></li>
+                <li>The <strong>del statement</strong> deletes an entry from a dictionary</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>10. Looping over lists (review)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>11. Looping over dictionaries (1/4)</h3>
+            <ul>
+                <li>If simply looping over a dictionary, Python's default behavior is to loop over the <em>keys</em> in that dictionary</li>
+                <li>The <em>method call</em> <strong>dictionary.keys()</strong> returns back the dictionary's keys, this is what Python is doing by default if not instructed otherwise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>12. Looping over dictionaries (2/4)</h3>
+            <ul>
+                <li>Just like the <strong>keys</strong> method that returns the dictionary's keys, there's a <strong>values</strong> method that returns the dictionary's values</li>
+                <li>Don't have to use names for the variables like <strong>key</strong> and <strong>value</strong>, but it is a good idea, since it makes the code more readable and helps us remember what the variables are being used for</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>13. Looping over dictionaries (3/4)</h3>
+            <ul>
+                <li>Use <strong>items()</strong> to loop over full entries of a dictionary</li>
+                <li>Using the method call <strong>items</strong> will return each entry as a pair of key and value, separated by a comma</li>
+                <li>A <strong>tuple</strong> is a type of data structure similar to like a list, but is <em>immutable</em> and uses <em>parentheses</em> <strong>( )</strong> rather than square brackets <strong>[ ]</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>14. Looping over dictionaries (4/4)</h3>
+            <ul>
+                <li>A big part of being an effective programmer is finding needed information for yourself</li>
+                <li>A good resource to use is <strong>Stack Overflow</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>15. Nested data structures</h3>
+            <ul>
+                <li>Either an integer or a string may be used as a key, but neither a list nor dictionary may be used as a key in a dictionary</li>
+                <ul>
+                    <li>This is related to the fact lists and dictionaries are both <em>mutable</em></li>
+                    <li>For example, if you used a list as a dictionary key and then modified the list, it would be unclear whether you wanted the key to be the old value of the list or the new one</li>
+                </ul>
+                <li>However, lists and dictionaries can be used as values in a dictionary</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>16. Looping over nested structures (1/3)</h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+
     </div>
 
     <div class="section">
