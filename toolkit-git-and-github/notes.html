@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:700|Roboto:300,400,500," rel="stylesheet">
 </head>
+
 <body>
     <h1><span>&lt/&gt</span> Toolkit: Git and GitHub</h1>
 
@@ -16,7 +18,9 @@
         <div>
             <h3>1. What is Version Control</h3>
             <ul>
-                <li>A component of software configuration management, <strong>version control</strong>, also known as <strong>revision control</strong> or <strong>source control</strong>, is the management of changes to documents, computer programs, large web sites, and other collections of information</li>
+                <li>A component of software configuration management, <strong>version control</strong>, also known as
+                    <strong>revision control</strong> or <strong>source control</strong>, is the management of changes
+                    to documents, computer programs, large web sites, and other collections of information</li>
                 <li>Three of the most popular version control systems are:
                     <ul>
                         <li>Git</li>
@@ -30,8 +34,10 @@
                         <li>the <em>distributed model</em> each user has the entire repository on their computer</li>
                     </ul>
                 </li>
-                <li><strong>Git</strong> is the version control tool and <strong>GitHub</strong> is the service that hosts Git projects</li>
-                <li>Version control systems aim to solve a specific problem that programmers face: "storing and sharing multiple versions of code files"</li>
+                <li><strong>Git</strong> is the version control tool and <strong>GitHub</strong> is the service that
+                    hosts Git projects</li>
+                <li>Version control systems aim to solve a specific problem that programmers face: "storing and sharing
+                    multiple versions of code files"</li>
             </ul>
         </div>
 
@@ -45,26 +51,38 @@
         <div>
             <h3>3. Git and Version Control Terminology</h3>
             <ul>
-                <li><strong>Version Control System / Source Code Manager</strong>: VCS or SCM is a tool that manages different versions of source code</li>
-                <li><strong>Commit</strong>: Git thinks of its data like a set of snapshots of a mini filesystem, everytime you commit (save the state of your project in Git), it basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot</li>
+                <li><strong>Version Control System / Source Code Manager</strong>: VCS or SCM is a tool that manages
+                    different versions of source code</li>
+                <li><strong>Commit</strong>: Git thinks of its data like a set of snapshots of a mini filesystem,
+                    everytime you commit (save the state of your project in Git), it basically takes a picture of what
+                    all your files look like at that moment and stores a reference to that snapshot</li>
                 <ul>
-                    <li>Think of it as a save point in a game - it saves your project's files and any information about them</li>
-                    <li>Everything you do in Git is to help you make commits, so a commit is <em>the fundamental unit</em> in Git</li>
-                    <li>When a commit is made, only the changes that are in the Staging Index are saved in the repository</li>
+                    <li>Think of it as a save point in a game - it saves your project's files and any information about
+                        them</li>
+                    <li>Everything you do in Git is to help you make commits, so a commit is <em>the fundamental unit</em>
+                        in Git</li>
+                    <li>When a commit is made, only the changes that are in the Staging Index are saved in the
+                        repository</li>
                 </ul>
-                <li><strong>Repository / repo</strong>: a directory which contains your project work, as well as a few files (hidden by default on Mac OS X) which are used to communicate with Git</li>
+                <li><strong>Repository / repo</strong>: a directory which contains your project work, as well as a few
+                    files (hidden by default on Mac OS X) which are used to communicate with Git</li>
                 <ul>
                     <li>Repos can exist either locally on your computer or as a remote copy on another computer</li>
                     <li>A repository is made up of commits</li>
                 </ul>
                 <li><strong>Working Directory</strong>: is the files that you see in your computer's file system</li>
                 <ul>
-                    <li>When you open your project files up on a code editor, you're working with files in the working directory</li>
+                    <li>When you open your project files up on a code editor, you're working with files in the working
+                        directory</li>
                     <li>This is in contrast to the files that have been saved (in commits) in the repository</li>
                 </ul>
-                <li><strong>Checkout</strong>: is when content in the repository has been copied to the Working Directory</li>
-                <li><strong>SHA</strong>: is basically an ID number for each commit, "SHA" is shorthand for "Secure Hash Algorithm"</li>
-                <li><strong>Branch</strong>: is when a new line of development is created that diverges from the main line of development, this alternative line of development can continue without altering the main line</li>
+                <li><strong>Checkout</strong>: is when content in the repository has been copied to the Working
+                    Directory</li>
+                <li><strong>SHA</strong>: is basically an ID number for each commit, "SHA" is shorthand for "Secure
+                    Hash Algorithm"</li>
+                <li><strong>Branch</strong>: is when a new line of development is created that diverges from the main
+                    line of development, this alternative line of development can continue without altering the main
+                    line</li>
                 <li>The key terms can be found <a href="http://video.udacity-data.com.s3.amazonaws.com/topher/2017/March/58d31eb5_ud123-git-keyterms/ud123-git-keyterms.pdf">here</a></li>
             </ul>
         </div>
@@ -97,7 +115,8 @@
             <h3>1. Intro</h3>
             <ul>
                 <li><strong>git init</strong> is used to create brand new repositories on your computer</li>
-                <li><strong>git clone</strong> is used to copy existing repos from somewhere else to your local computer</li>
+                <li><strong>git clone</strong> is used to copy existing repos from somewhere else to your local
+                    computer</li>
                 <li><strong>git status</strong> is used to check the status of a repo</li>
             </ul>
         </div>
@@ -105,15 +124,21 @@
         <div>
             <h3>2. Create a Repo From Scratch</h3>
             <ul>
-                <li>Running the <strong>git init</strong> command sets up all the necessary files and directories that Git will use to keep track of everything, all these files are stored in a directory called <strong>.git</strong> (notice the . at the beginning - that means it'll be a hidden directory on Mac/Linux)</li>
+                <li>Running the <strong>git init</strong> command sets up all the necessary files and directories that
+                    Git will use to keep track of everything, all these files are stored in a directory called <strong>.git</strong>
+                    (notice the . at the beginning - that means it'll be a hidden directory on Mac/Linux)</li>
                 <li>Brief synopsis on each of the items in the .git directory:</li>
                 <ul>
-                    <li><strong>config file</strong>: where all <em>project specific</em> configuration settings are stored</li>
-                    <li><strong>description file</strong>: this file is only used by the GitWeb program, so we can ignore it</li>
-                    <li><strong>hooks directory</strong>: this is where we could place client-side or server-side scripts that we can use to hook into Git's different lifecycle events</li>
+                    <li><strong>config file</strong>: where all <em>project specific</em> configuration settings are
+                        stored</li>
+                    <li><strong>description file</strong>: this file is only used by the GitWeb program, so we can
+                        ignore it</li>
+                    <li><strong>hooks directory</strong>: this is where we could place client-side or server-side
+                        scripts that we can use to hook into Git's different lifecycle events</li>
                     <li><strong>info directory</strong>: contains the global exclues file</li>
                     <li><strong>objects directory</strong>: this directory will store all of the commits we make</li>
-                    <li><strong>refs directory</strong>: this directory holds pointers to commits (basically the "branches" and "tags")</li>
+                    <li><strong>refs directory</strong>: this directory holds pointers to commits (basically the
+                        "branches" and "tags")</li>
                 </ul>
             </ul>
         </div>
@@ -134,7 +159,8 @@
         <div>
             <h3>4. Determine A Repo's Status</h3>
             <ul>
-                <li><strong>git status</strong> command will display a lot of information depending on the state of your files, the working directory, and the repository</li>
+                <li><strong>git status</strong> command will display a lot of information depending on the state of
+                    your files, the working directory, and the repository</li>
             </ul>
         </div>
 
@@ -160,7 +186,8 @@
         <div>
             <h3>2. Displaying A Repository's Commits</h3>
             <ul>
-                <li><em>Always</em> run the git status command, especially when returning to a project after a period of time</li>
+                <li><em>Always</em> run the git status command, especially when returning to a project after a period
+                    of time</li>
                 <li>to scroll <strong>down</strong>, press</li>
                 <ul>
                     <li>j or down arrow key to move down one line at a time</li>
@@ -174,7 +201,8 @@
                     <li>b to move by a whole page screen</li>
                 </ul>
                 <li>press q to <strong>quit</strong> out of the log (returns tot he regular command prompt)</li>
-                <li>By <em>default</em>, the git log command displays: the SHA, author, date, and message of every commit in the repository</li>
+                <li>By <em>default</em>, the git log command displays: the SHA, author, date, and message of every
+                    commit in the repository</li>
             </ul>
         </div>
 
@@ -198,7 +226,8 @@
                 <ul>
                     <li>displays the file(s) that have been modified</li>
                     <li>displays the number of lines that have been added/removed</li>
-                    <li>displays a summary line with the total number of modified files and lines that have been added/removed</li>
+                    <li>displays a summary line with the total number of modified files and lines that have been
+                        added/removed</li>
                 </ul>
             </ul>
         </div>
@@ -208,12 +237,14 @@
             <ul>
                 <li>$ git log -p</li>
                 <ul>
-                    <li>The -p flag (which is the same as the --patch flag) is used to alter how git log displays information</li>
+                    <li>The -p flag (which is the same as the --patch flag) is used to alter how git log displays
+                        information</li>
                     <li>displays the files that have been modified</li>
                     <li>displays the location of the lines that have been added/removed</li>
                     <li>displays the actual changes that have been made</li>
                 </ul>
-                <li>both <strong>git log -p --stat</strong> and <strong>git log --stat -p</strong> displays with the stats info above the patch info</li>
+                <li>both <strong>git log -p --stat</strong> and <strong>git log --stat -p</strong> displays with the
+                    stats info above the patch info</li>
                 <li>the <strong>-w</strong> flag ignores the whitespace changes in the patch information</li>
             </ul>
         </div>
@@ -231,8 +262,10 @@
                 </ul>
                 <li>'git show' can be combined with most of the other flags we've looked at:</li>
                 <ul>
-                    <li>'--stat' - to show the how many many files were changed and the number of lines that were added/removed</li>
-                    <li>'-p' or '--patch' - this the default, but if '--stat' is used, the patch won't display, so pass '-p' to add it again</li>
+                    <li>'--stat' - to show the how many files were changed and the number of lines that were
+                        added/removed</li>
+                    <li>'-p' or '--patch' - this the default, but if '--stat' is used, the patch won't display, so pass
+                        '-p' to add it again</li>
                     <li>'-w' - to ignore changes to whitespace</li>
                 </ul>
             </ul>
@@ -261,21 +294,25 @@
         <div>
             <h3>2. Git Add</h3>
             <ul>
-                <li>Running <strong>git init</strong> multiple times doesn't cause any problems since it just re-initializes the Git directory</li>
+                <li>Running <strong>git init</strong> multiple times doesn't cause any problems since it just
+                    re-initializes the Git directory</li>
                 <li>Use <strong>git rm --cached &ltfile&gt</strong> to unstage</li>
                 <ul>
                     <li>It is not like the shell's <strong>rm</strong>command</li>
-                    <li><strong>git rm --cached &ltfile&gt</strong> will not destroy any of your work; it just removes it from the Staging Index</li>
+                    <li><strong>git rm --cached &ltfile&gt</strong> will not destroy any of your work; it just removes
+                        it from the Staging Index</li>
                 </ul>
                 <li><strong>$ git add .</strong></li>
                 <ul>
-                    <li>The period refers to the current directory and can be used as a shortcut to refer to all files and directories (including all nested files and directories)</li>
+                    <li>The period refers to the current directory and can be used as a shortcut to refer to all files
+                        and directories (including all nested files and directories)</li>
                     <li>Becareful to not accidentally include more files than you meant to</li>
                 </ul>
                 <li><strong>$ git add &ltfile1&gt &ltfile2&gt ... &ltfileN&gt</strong></li>
                 <ul>
                     <li>takes a space-separated list of file names</li>
-                    <li>alternatively, the period can be used in place of a list of files to tell Git to add the current directory (and all nested files)</li>
+                    <li>alternatively, the period can be used in place of a list of files to tell Git to add the
+                        current directory (and all nested files)</li>
                 </ul>
             </ul>
         </div>
@@ -283,14 +320,109 @@
         <div>
             <h3>3. Git Commit</h3>
             <ul>
-                <li></li>
+                <li><strong>git commit</strong> command takes files from the Staging Index and saves them in the
+                    repository</li>
+                <li><strong>$ git commit -m "Initial commit"</strong></li>
+                <ul>
+                    <li>Use the <strong>-m</strong> flag to pass your message directly on the command line</li>
+                </ul>
+                <li>The best way to think about what should be in a commit is to think, "What if all changes introduced
+                    in this commit were erased?" if a commit were erased, it should only remove one thing</li>
             </ul>
         </div>
-        
+
+        <div>
+            <h3>4. Commit Messages</h3>
+            <ul>
+                <li>Some important things to think about when crafting a good commit message:</li>
+                <ul>
+                    <li>do keep the message short (less than 60-ish characters</li>
+                    <li>do explain <em>what</em> the commit does (not how or why!)</li>
+                    <li>do not explain <em>why</em> the changes are made</li>
+                    <li>do not explain <em>how</em> the changes are made (that's what <strong>git log -p</strong> is
+                        for!)</li>
+                    <li>do not use the word "and", if you have to use "and", your commit message is probably doing too
+                        many changes - break the changes into separate commits</li>
+                </ul>
+                <li>The best way to come up with a commit message is to finish this phrase, "This commit will..."</li>
+                <li>Above all, <strong><em>be consistent</em></strong> in how you write your commit messages!</li>
+                <li>If you need to explain <em>why</em> a commit needs to be made, you can after the first line in the
+                    commit message</li>
+                <li>After the message, leave a blank line, and then type out the body or explanation including details
+                    about why the commit is needed</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Git Diff</h3>
+            <ul>
+                <li><strong>$ git diff</strong></li>
+                <li>The command is used to see changes that have been made but haven't been committed, yet</li>
+                <li>This command displays: the files that have been modified, the location of the lines that have been
+                    added/removed, the actual changes that have been made</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Having Git Ignore Files</h3>
+            <ul>
+                <li>The <strong>.gitignore</strong> file is used to tell Git about the files that Git should not track</li>
+                <li>This file should be placed in the same directory that the <strong>.git</strong> directory is in</li>
+                <li><em>Globbing</em> lets you use special characters to match patterns/characters, in the .gitignore
+                    file, you can use the following:</li>
+                <ul>
+                    <li>blank lines can be used for spacing</li>
+                    <li># - marks line as a comment</li>
+                    <li>* - matches 0 or more characters</li>
+                    <li>? - matches 1 character</li>
+                    <li>[abc] - matches a, b, or c</li>
+                    <li>** - matches nested directories</li>
+                </ul>
+                <li>Create useful .gitignore files for you project <a href="https://www.gitignore.io/">here</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. Outro</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
         <h2><span>#</span> Tagging, Branching, and Merging</h2>
+        <div>
+            <h3>1. Intro</h3>
+            <ul>
+                <li><strong>git tag</strong> adds tags to specific commits</li>
+                <li><strong>git branch</strong> allows multiple lines of development</li>
+                <li><strong>git checkout</strong> switch between different branches and tags</li>
+                <li><strong>git merge</strong> combines changes from different branches</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Tagging</h3>
+            <ul>
+                <li>Tags let you point out particular commits to make them stand out from others</li>
+                <li><strong>$ git tag -a beta</strong></li>
+                <ul>
+                    <li>Adds a tag to the most recent commit</li>
+                    <li>Adds a tag to a specific commit if a SHA is passed</li>
+                    <li><em>-a</em> flag is used to create an annotated tag, recommended becausee it includes more information such as: the person who made the tag, the date the tag was made, and a message for the tag</li>
+                </ul>
+                <li>A Git tag can be deleted with the <strong>-d</strong> flag (for delete!) and the name of the tag, <strong>$ git tag -d v1.0</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Branching</h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        
     </div>
 
     <div class="section">
@@ -309,4 +441,5 @@
         <h2><span>#</span> Staying in Sync with a Remote Repository</h2>
     </div>
 </body>
+
 </html>
