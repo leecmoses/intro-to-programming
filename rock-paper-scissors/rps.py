@@ -22,11 +22,10 @@ class Player:
 class HumanPlayer(Player):
 
     def move(self):
-        print("What would you like to throw?")
-        throw = input("> ").lower()
+        throw = ''
         while throw not in moves:
-            print("Please enter a valid throw: rock, paper, or scissors")
-            throw = input("> ").lower()
+            print("Rock, paper, or scissors?")
+            throw = input(">>> ").lower()
         return throw
 
 
@@ -76,13 +75,12 @@ def beats(one, two):
             (one == 'paper' and two == 'rock'))
 
 
-def SelectPlayer():
+def select_player():
     player = ''
     players = ['random', 'reflect', 'repeat', 'cycle']
-    print("Who would you like to play with?")
     while player not in players:
-        print("Please enter 'random', 'reflect', 'repeat' or 'cycle'")
-        player = input("> ").lower()
+        print("Select mode: random, reflect, repeat, or cycle")
+        player = input(">>> ").lower()
     if player == 'random':
         return RandomPlayer()
     elif player == 'reflect':
@@ -91,6 +89,22 @@ def SelectPlayer():
         return RepeatPlayer()
     elif player == 'cycle':
         return CyclePlayer()
+
+
+def select_rounds():
+    rounds = 0
+    while integer_validation(rounds) is False:
+        print("How many rounds?")
+        rounds = input(">>> ")
+    rounds = int(rounds)
+    return rounds
+
+
+def integer_validation(value):
+    try:
+        return int(value) > 0
+    except ValueError:
+        return False
 
 
 class Game:
@@ -102,44 +116,32 @@ class Game:
     def play_round(self):
         move1 = self.p1.move()
         move2 = self.p2.move()
-        print(f"Player 1: {move1}  Player 2: {move2}")
+        print(f"You played {move1}.\nOpponent played {move2}.")
         if move1 == move2:
             print("The round is a tie!")
         elif beats(move1, move2):
             print("You won the round!")
             self.p1.score += 1
         else:
-            print("Computer won the round!")
+            print("Opponent won the round!")
             self.p2.score += 1
-        print(f"You have {self.p1.score} point(s)"
-              "and the computer has {self.p2.score} point(s)")
+        print(f"Score: {self.p1.score} - {self.p2.score}")
         self.p1.learn(move1, move2)
         self.p2.learn(move2, move1)
 
     def play_game(self):
-        rounds = 0
-        print("How many rounds do you want to play?")
-        while rounds <= 0:
-            try:
-                print("Enter number of rounds")
-                rounds = int(input("> "))
-            except ValueError:
-                print("Please enter a number")
-                rounds = int(input("> "))
-        print("Here are the rules to the game: scissor cuts paper,"
-              " paper covers rock, and rock crushes scissors")
-        print("Play either rock, paper, or scissors")
-        for round in range(1, rounds + 1):
-            print(f"Round {round}:")
+        for round in range(1, select_rounds() + 1):
+            print(f"\n-- Round {round} --")
             self.play_round()
         if self.p1.score > self.p2.score:
-            print(f"You won the game with {self.p1.score} point(s)!")
+            print(f"\nYou won the game with {self.p1.score} point(s)!")
         elif self.p2.score > self.p1.score:
-            print(f"The computer won the game with {self.p2.score} point(s)!")
+            print(f"\nOpponent won the game with {self.p2.score} point(s)!")
         else:
-            print(f"Wow! It's a tie!")
+            print(f"\nYou and the opponent tied! Play again!")
 
 
 if __name__ == '__main__':
-    game = Game(HumanPlayer(), SelectPlayer())
+    print("Rock Paper Scissors, Shoot!")
+    game = Game(HumanPlayer(), select_player())
     game.play_game()
