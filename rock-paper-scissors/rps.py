@@ -60,14 +60,16 @@ class CyclePlayer(Player):
 
     def __init__(self):
         super().__init__()
-        self.cycle = moves[:]
+        self.cycle = -1
 
     def move(self):
-        if len(self.cycle) > 0:
-            return self.cycle.pop(0)
-        else:
-            self.cycle = moves[:]
-            return self.cycle.pop(0)
+        self.cycle += 1
+        if self.cycle % 3 == 0:
+            return moves[0]
+        elif self.cycle % 3 == 1:
+            return moves[1]
+        elif self.cycle % 3 == 2:
+            return moves[2]
 
 
 def beats(one, two):
