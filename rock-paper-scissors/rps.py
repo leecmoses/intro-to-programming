@@ -77,20 +77,20 @@ def beats(one, two):
 
 
 def SelectPlayer():
-        player = ''
-        players = ['random', 'reflect', 'repeat', 'cycle']
-        print("Who would you like to play with?")
-        while player not in players:
-            print("Please enter 'random', 'reflect', 'repeat' or 'cycle'")
-            player = input("> ").lower()
-        if player == 'random':
-            return RandomPlayer()
-        elif player == 'reflect':
-            return ReflectPlayer()
-        elif player == 'repeat':
-            return RepeatPlayer()
-        elif 'cycle':
-            return CyclePlayer()
+    player = ''
+    players = ['random', 'reflect', 'repeat', 'cycle']
+    print("Who would you like to play with?")
+    while player not in players:
+        print("Please enter 'random', 'reflect', 'repeat' or 'cycle'")
+        player = input("> ").lower()
+    if player == 'random':
+        return RandomPlayer()
+    elif player == 'reflect':
+        return ReflectPlayer()
+    elif player == 'repeat':
+        return RepeatPlayer()
+    elif player == 'cycle':
+        return CyclePlayer()
 
 
 class Game:
@@ -111,6 +111,8 @@ class Game:
         else:
             print("Computer won the round!")
             self.p2.score += 1
+        print(f"You have {self.p1.score} point(s)"
+              "and the computer has {self.p2.score} point(s)")
         self.p1.learn(move1, move2)
         self.p2.learn(move2, move1)
 
@@ -131,14 +133,11 @@ class Game:
             print(f"Round {round}:")
             self.play_round()
         if self.p1.score > self.p2.score:
-            self.final_score = self.p1.score
-            self.winner = 'You'
+            print(f"You won the game with {self.p1.score} point(s)!")
         elif self.p2.score > self.p1.score:
-            self.final_score = self.p2.score
-            self.winner = 'Computer'
+            print(f"The computer won the game with {self.p2.score} point(s)!")
         else:
             print(f"Wow! It's a tie!")
-        print(f"{self.winner} won with the game {self.final_score} point(s)!")
 
 
 if __name__ == '__main__':
