@@ -134,8 +134,8 @@ class Game:
         self.p2.learn(move2, move1)
 
     def play_game(self):
-        for round in range(1, select_rounds() + 1):
-            print(Fore.YELLOW + f"\n-- Round {round} --" + Style.RESET_ALL)
+        for round in range(select_rounds()):
+            print(Fore.YELLOW + f"\n-- Round {round + 1} --" + Style.RESET_ALL)
             self.play_round()
         if self.p1.score > self.p2.score:
             print(Fore.YELLOW +
