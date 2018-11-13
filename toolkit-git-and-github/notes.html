@@ -410,31 +410,365 @@
                 <ul>
                     <li>Adds a tag to the most recent commit</li>
                     <li>Adds a tag to a specific commit if a SHA is passed</li>
-                    <li><em>-a</em> flag is used to create an annotated tag, recommended becausee it includes more information such as: the person who made the tag, the date the tag was made, and a message for the tag</li>
+                    <li><em>-a</em> flag is used to create an annotated tag, recommended becausee it includes more
+                        information such as: the person who made the tag, the date the tag was made, and a message for
+                        the tag</li>
                 </ul>
-                <li>A Git tag can be deleted with the <strong>-d</strong> flag (for delete!) and the name of the tag, <strong>$ git tag -d v1.0</strong></li>
+                <li>A Git tag can be deleted with the <strong>-d</strong> flag (for delete!) and the name of the tag,
+                    <strong>$ git tag -d v1.0</strong></li>
             </ul>
         </div>
 
         <div>
             <h3>3. Branching</h3>
             <ul>
-                <li></li>
+                <li><strong>$ git branch</strong></li>
+                <ul>
+                    <li>can be used to list all branch names in the repository, to create new branches, and to delete
+                        branches</li>
+                </ul>
+                <li>To create a branch, all you have to do is use <strong>git branch</strong> and provide it the name
+                    of the branch you want to create</li>
+                <li>When a commit is made it will be added to the current branch</li>
+                <li><strong>$ git checkout &ltbranch&gt</strong></li>
+                <ul>
+                    <li>Running this command will remove all files and directories from the Working Directory that Git
+                        is tracking (files that Git tracks are stored in the repo, so nothing is lost)</li>
+                    <li>It will go into the repository and pull out all of the files and directories of the commit that
+                        the branch points to</li>
+                </ul>
+                <li><strong>$ git branch alt-sidebar-loc 42a69f</strong></li>
+                <ul>
+                    <li>This will create the alt-sidebar-loc branch and have it point to the commit with SHA 42a69f</li>
+                </ul>
+                <li>After a branch's changes have been merged, you probably won't need the branch anymore, if you want
+                    to delete the branch use the <strong>-d</strong> flag</li>
+                <li><strong>$ git branch -d sidebar</strong></li>
+                <ul>
+                    <li>The command deletes the provided branch, in this case, the "sidebar" branch</li>
+                    <li>You cannot delete a branch that you're currently on</li>
+                    <li>Git won't let you delete a branch if it has commits on it that aren't on any other branch
+                        (meaning the commits are unique to the branch that's about to be deleted)</li>
+                    <li>To force deletion, use a capital <strong>-D</strong> flag</li>
+                </ul>
+                <li><strong>$ git checkout -b &ltbranch&gt</strong> can be used to switch to a newly created branch</li>
+                <li>Further Research</li>
+                <ul>
+                    <li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">Git
+                            Branching - Basic Branching and Merging</a> from the Git Docs</li>
+                    <li><a href="https://learngitbranching.js.org/" target="_blank">Learn Git Branching</a></li>
+                    <li><a href="https://www.atlassian.com/git/tutorials/using-branches" target="_blank">Git Branching
+                            Tutorial</a> from the Atlassian Blog</li>
+                </ul>
             </ul>
         </div>
-        
+
+        <div>
+            <h3>4. Branching Effectively</h3>
+            <ul>
+                <li><strong>$ git log --oneline -- decorate --graph --all</strong></li>
+                <ul>
+                    <li>Running this command will show all branches and commits in the repository</li>
+                    <li><strong>--graph</strong> flag adds the bullets and lines to the leftmost part of the output,
+                        this shows the actual <em>branching</em> that's happening</li>
+                    <li><strong>--all</strong> flag is what displays all of the branches in the repository</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Merging</h3>
+            <ul>
+                <li>Combining branches together is called <strong>merging</strong>, there are two main types of merges
+                    in Git, a regular <strong>merge</strong> and a <strong>Fast-forward merge</strong></li>
+                <li>Very important to know which branch you're on when you're about to merge branches together,
+                    remember that making a merge makes a commit ⚠️</li>
+                <li><strong>$ git merge &ltname-of-branch-to-merge-in&gt</strong></li>
+                <li>When we merge, we're merging some other branch into the current(checked-out) branch, <em>not
+                        merging</em> two branches into a new branch</li>
+                <li>A default message is supplied for a <em>merge commit</em></li>
+                <li>Whichever branch the special HEAD pointer is pointing at, that's the branch that will have the
+                    merge commit</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Merge Conflicts</h3>
+            <ul>
+                <li>A <strong>merge conflict</strong> happens when a merge fails</li>
+                <li>Git tracks lines in files, a merge conflict will happen when the exact same line(s) are changed in
+                    separate branches</li>
+                <li>So the same line on two or more different branches have to be edited... and then try to merge them</li>
+
+                <li>The editor has the following merge conflict indicators:
+                    <ul>
+                        <li><strong>&lt&lt&lt&lt&lt&lt&lt HEAD</strong> everything below this line (until the next
+                            indicator) shows you what's on the current branch</li>
+                        <li><strong>||||||| merged common ancestors</strong> everything below this line (until the next
+                            indicator) shows you what the original lines were</li>
+                        <li><strong>=======</strong> is the end of the original lines, everything that follows (until
+                            the next indicator) is what's on the branch that's being merged in</li>
+                        <li><strong>>>>>>>> branch-name</strong> is the ending indicator of what's on the branch that's
+                            being merged in</li>
+                    </ul>
+                </li>
+                <li>To resolve a merge conflict, first choose which line(s) to keep and, then, remove all lines with
+                    indicators</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. Outro</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
         <h2><span>#</span> Undoing Changes</h2>
+        <div>
+            <h3>1. Intro</h3>
+            <ul>
+                <li><strong>git commit --amend</strong> alters the most-recent commit</li>
+                <li><strong>git revert</strong> reverses given commit</li>
+                <li><strong>git reset</strong> erases commits</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Modifying The Last Commit</h3>
+            <ul>
+                <li><strong>$ git commit --amend</strong></li>
+                <ul>
+                    <li>If Working Directory is clean (meaning there are not any uncommitted changes in the
+                        repository), then running the command will let you provide a new commit message</li>
+                    <li>Alternatively, the command will let you include files (or changes to files) you might have
+                        forgotten to include</li>
+                    <ul>
+                        <li>edit the file(s)</li>
+                        <li>save the file(s)</li>
+                        <li>stage the file(s)</li>
+                        <li>and run <strong>git commit --amend</strong></li>
+                        <li>This updates the most-recent commit instead of creating a new one</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Reverting A Commit</h3>
+            <ul>
+                <li><strong>$ git revert &ltSHA-of-commit-to-revert&gt</strong></li>
+                <ul>
+                    <li>Will undo the changes that were made by the provided commit</li>
+                    <li>creates a new commit to record the changes</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Resetting Commits</h3>
+            <ul>
+                <li>At first glance, resetting might seem coincidentally close to reverting, but they are actually
+                    quite different</li>
+                <li>Reverting creates a new commit that reverts or undos a previous commit</li>
+                <li>Resetting, on the other hand, <em>erases</em> commits</li>
+                <li>Becareful with Git's resetting capabilities, this is one of the few commands that lets you erase
+                    commits from the repository ⚠️</li>
+                <li>If a commit is no longer in the repo, then its content is gone</li>
+                <li>There are special characters called "Ancestry References" that tell Git about relative references
+                    to another commit:</li>
+                <ul>
+                    <li><strong>^</strong> - indicates the parent commit</li>
+                    <li><strong>~</strong> - indicates the <em>first</em> parent commit</li>
+                </ul>
+                <li>The following indicate the parent commit of the current commit</li>
+                <ul>
+                    <li>HEAD^</li>
+                    <li>HEAD~</li>
+                    <li>HEAD~1</li>
+                </ul>
+                <li> The following indicate the grandparent commit of the current commit</li>
+                <ul>
+                    <li>HEAD^^</li>
+                    <li>HEAD~2</li>
+                </ul>
+                <li>The following indcate the great-grandparent commit of the current commit</li>
+                <ul>
+                    <li>HEAD^^^</li>
+                    <li>HEAD~3</li>
+                </ul>
+                <li>The main difference between the <strong>^</strong> and he <strong>~</strong> is when a commit is
+                    created <em>from</em> a <em>merge</em></li>
+                <li>A merge commit has two parents, the first parent is the branch you were on when you ran <strong>git
+                        merge</strong> while the second parent is the branch that was merged in</li>
+                <li>The <strong>^</strong> reference is used to indicate the <em>first</em> parent of the commit while
+                    <strong>^2</strong> indicates the <em>second</em> parent</li>
+                <li><strong>$ git reset &ltreference-to-commit&gt</strong></li>
+                <ul>
+                    <li>Move the HEAD and current branch pointer to the referenced commit</li>
+                    <li>Erase commits</li>
+                    <li>Move committed changes to the staging index</li>
+                    <li>Unstage committed changes</li>
+                </ul>
+                <li>The way that Git determines if it erases, stages previously committed changes, or unstages
+                    previously committed changes is by the flag that is used</li>
+                <ul>
+                    <li><strong>--mixed</strong> moves the content to the Working Directory (--mixed is the default)</li>
+                    <li><strong>--soft</strong> moves the content to the Staging Index</li>
+                    <li><strong>--hard</strong> moves the content to the trash</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Lesson Outro</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Course Outro</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
     </div>
+
 
     <div class="section">
         <h2><span>#</span> Working with Remotes</h2>
+        <div>
+            <h3>1. Intro</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Remote Repositories</h3>
+            <ul>
+                <li>When collaborating with other developers make sure to create a new branch that has a descriptive name that describes what changes it contains</li>
+                <li><strong>git remote</strong> manage remote repo</li>
+                <li><strong>git push</strong> send changes to the remote</li>
+                <li><strong>git pull</strong> retrieve updates from the remote</li>
+                <li>A local repository is the one that you work on in your local machine, while a remote repositories live elsewhere (e.g. a friend's computer, GitHub, etc.)</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Add A Remote Repository</h3>
+            <ul>
+                <li>The word "origin" is the defacto name that's used to refer to the main remote repository, it is possible to rename this to something else, but typically it's left as "origin"</li>
+                <li><strong>$ git remote -v</strong></li>
+                <ul>
+                    <li>Use this command with the <strong>-v</strong> flag if you want to see the full path to the remote repository</li>
+                </ul>
+                <li>Git is a version control tool</li>
+                <li>GitHub is a service to host Git projects</li>
+                <li><strong>$ git remote add</strong> is used to add a connection to a new remote repository</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Push Changes To A Remote</h3>
+            <ul>
+                <li><strong>$ git push origin master</strong></li>
+                <ul>
+                    <li>The command takes the shortname of the remote repository you want to send commits to and the name of the branch that has the commits you want to send</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Pulling Changes From A Remote</h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Pull vs Fetch</h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. Lesson Wrap Up</h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
         <h2><span>#</span> Working on Another Developer's Repository</h2>
+        <div>
+            <h3>1. Intro</h3>
+            <ul>
+                <li>Learning objectives: Forking a repository, reviewing another developer's changes, and knowing what
+                    changes to make</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Forking a Repository</h3>
+            <ul>
+                <li>Forking is an action that's done on a hosting service, like GitHub</li>
+                <li>Forking a repository creates an identical copy of the original repository and moves this copy to
+                    your account</li>
+                <li>You have total control over this forked repo</li>
+                <li>Modifying your forked repository does not alter the original repository in any way</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Forking a Repository</h3>
+            <li><strong>$ git shortlog</strong></li>
+            <ul>
+                <li>The command displays an alphabetical list of names and the commit messages that go along with them</li>
+            </ul>
+            <li><strong>$ git shortlog -s -n</strong></li>
+            <ul>
+                <li><strong>-s</strong> flag to show just the number of commits (rather than each commit's message)</li>
+                <li><strong>-n</strong> flag to short them numerically (rather than alphabetically by author name)</li>
+            </ul>
+            <li><strong>$ git log --author=&ltname&gt</strong></li>
+            <ul>
+                <li>Use quotes for name if needed, otherwise it will cause an error</li>
+            </ul>
+            <li><strong>git log --grep=&ltkey word&gt</strong></li>
+            <ul>
+                <li>Filters down to just the commits that reference the key word(s)</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Determining What To Work On</h3>
+            <ul>
+                <li>Before you start doing any work, make sure to look for the project's CONTRIBUTING.md file</li>
+                <li>Look at GitHub issues for the project</li>
+                <ul>
+                    <li>look at the existing issues to see if one is similar to the change you want to contribute</li>
+                    <li>if necessary create a new issue</li>
+                    <li>communicate the changes you'd like to make to the project maintainer in the issue</li>
+                </ul>
+                <li>When you start developing, commit all of your work on a topic branch:</li>
+                <ul>
+                    <li>do no work on the master branch</li>
+                    <li>make sure to give the topic branch clear, descriptive name</li>
+                </ul>
+                <li>As a general best practices include:</li>
+                <ul>
+                    <li>Write descriptive commit messages</li>
+                    <li>Create small, focused commits</li>
+                    <li>Update the README</li>
+                </ul>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
