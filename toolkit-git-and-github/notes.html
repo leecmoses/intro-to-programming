@@ -650,21 +650,25 @@
         <div>
             <h3>2. Remote Repositories</h3>
             <ul>
-                <li>When collaborating with other developers make sure to create a new branch that has a descriptive name that describes what changes it contains</li>
+                <li>When collaborating with other developers make sure to create a new branch that has a descriptive
+                    name that describes what changes it contains</li>
                 <li><strong>git remote</strong> manage remote repo</li>
                 <li><strong>git push</strong> send changes to the remote</li>
                 <li><strong>git pull</strong> retrieve updates from the remote</li>
-                <li>A local repository is the one that you work on in your local machine, while a remote repositories live elsewhere (e.g. a friend's computer, GitHub, etc.)</li>
+                <li>A local repository is the one that you work on in your local machine, while a remote repositories
+                    live elsewhere (e.g. a friend's computer, GitHub, etc.)</li>
             </ul>
         </div>
 
         <div>
             <h3>3. Add A Remote Repository</h3>
             <ul>
-                <li>The word "origin" is the defacto name that's used to refer to the main remote repository, it is possible to rename this to something else, but typically it's left as "origin"</li>
+                <li>The word "origin" is the defacto name that's used to refer to the main remote repository, it is
+                    possible to rename this to something else, but typically it's left as "origin"</li>
                 <li><strong>$ git remote -v</strong></li>
                 <ul>
-                    <li>Use this command with the <strong>-v</strong> flag if you want to see the full path to the remote repository</li>
+                    <li>Use this command with the <strong>-v</strong> flag if you want to see the full path to the
+                        remote repository</li>
                 </ul>
                 <li>Git is a version control tool</li>
                 <li>GitHub is a service to host Git projects</li>
@@ -677,7 +681,8 @@
             <ul>
                 <li><strong>$ git push origin master</strong></li>
                 <ul>
-                    <li>The command takes the shortname of the remote repository you want to send commits to and the name of the branch that has the commits you want to send</li>
+                    <li>The command takes the shortname of the remote repository you want to send commits to and the
+                        name of the branch that has the commits you want to send</li>
                 </ul>
             </ul>
         </div>
@@ -685,21 +690,46 @@
         <div>
             <h3>5. Pulling Changes From A Remote</h3>
             <ul>
-                <li></li>
+                <li><strong>$ git pull origin master</strong></li>
+                <li>If there are changes in a remote repo that you'd like to include in your local repository, then you
+                    wan to <em>pull</em> in those changes</li>
+                <li>When <strong>git pull</strong> is run, the following things happen:</li>
+                <ul>
+                    <li>the commit(s) on the remote branch are copied to the local repository</li>
+                    <li>the local tracking branch (origin/master) is moved to point to the most recent commit</li>
+                    <li>the local tracking branch (origin/master) is merged into the local branch (master)</li>
+                </ul>
+                <li>Changes can be manually added on GitHub (but this is not recommended, so don't do it)</li>
             </ul>
         </div>
 
         <div>
             <h3>6. Pull vs Fetch</h3>
             <ul>
-                <li></li>
+                <li>You can think of the <strong>git pull</strong> command as doing two things:</li>
+                <ul>
+                    <li>fetching remote changes (which adds the commits to the local repository and moves the tracking
+                        branch to point to them)</li>
+                    <li>merging the local branch with the tracking branch</li>
+                </ul>
+                <li>The <strong>git fetch</strong> command is just the first step, it just retrieves the commits and
+                    moves the tracking branch, it does not merge the local branch with the tracking branch</li>
+                <li><strong>$ git fetch origin master</strong></li>
+                <li>the same information provided to <strong>git pull</strong> is passed to <strong>git fetch</strong>:</li>
+                <ul>
+                    <li>the shortname of the remote repository</li>
+                    <li>the branch with commits to retrieve</li>
+                </ul>
             </ul>
         </div>
 
         <div>
             <h3>7. Lesson Wrap Up</h3>
             <ul>
-                <li></li>
+                <li><strong>git remote</strong> to manage a remote repository</li>
+                <li><strong>git push</strong> to send changes</li>
+                <li><strong>git fetch</strong> to retrieve updates</li>
+                <li><strong>git pull</strong> to retrieve and automatically merge updates</li>
             </ul>
         </div>
     </div>
@@ -727,22 +757,25 @@
 
         <div>
             <h3>3. Forking a Repository</h3>
-            <li><strong>$ git shortlog</strong></li>
             <ul>
-                <li>The command displays an alphabetical list of names and the commit messages that go along with them</li>
-            </ul>
-            <li><strong>$ git shortlog -s -n</strong></li>
-            <ul>
-                <li><strong>-s</strong> flag to show just the number of commits (rather than each commit's message)</li>
-                <li><strong>-n</strong> flag to short them numerically (rather than alphabetically by author name)</li>
-            </ul>
-            <li><strong>$ git log --author=&ltname&gt</strong></li>
-            <ul>
-                <li>Use quotes for name if needed, otherwise it will cause an error</li>
-            </ul>
-            <li><strong>git log --grep=&ltkey word&gt</strong></li>
-            <ul>
-                <li>Filters down to just the commits that reference the key word(s)</li>
+                <li><strong>$ git shortlog</strong></li>
+                <ul>
+                    <li>The command displays an alphabetical list of names and the commit messages that go along with
+                        them</li>
+                </ul>
+                <li><strong>$ git shortlog -s -n</strong></li>
+                <ul>
+                    <li><strong>-s</strong> flag to show just the number of commits (rather than each commit's message)</li>
+                    <li><strong>-n</strong> flag to short them numerically (rather than alphabetically by author name)</li>
+                </ul>
+                <li><strong>$ git log --author=&ltname&gt</strong></li>
+                <ul>
+                    <li>Use quotes for name if needed, otherwise it will cause an error</li>
+                </ul>
+                <li><strong>git log --grep=&ltkey word&gt</strong></li>
+                <ul>
+                    <li>Filters down to just the commits that reference the key word(s)</li>
+                </ul>
             </ul>
         </div>
 
@@ -773,6 +806,91 @@
 
     <div class="section">
         <h2><span>#</span> Staying in Sync with a Remote Repository</h2>
+        <div>
+            <h3>1. Intro</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Create a Pull Request</h3>
+            <ul>
+                <li>A <strong>pull request</strong> is a <em>request</em> for the source repository to pull in your
+                    commits and merge them with their project</li>
+                <li>To create a pull request, a couple of things need to happen:</li>
+                <ul>
+                    <li>you must <em>fork</em> the source repository</li>
+                    <li>clone your fork down to your machine</li>
+                    <li>make some commits (ideally on a topic branch!)</li>
+                    <li>push the commits back to <em>your fork</em></li>
+                    <li>create a new pull request and choose the branch that has your new commits</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Stay in sync with source project</h3>
+            <ul>
+                <li>The word <strong>upstream</strong> is typically used to refer to the source repository</li>
+                <li>When working with a project that you've forked, the original project's maintainer may continue
+                    adding changes to their project, you will want to keep your fork of their project in sync with
+                    theirs so that you can include any changes they make</li>
+                <li>To get commits from a source repository into your forked repository on GitHub you need to:</li>
+                <ul>
+                    <li>get the cloneable URL of the source repository</li>
+                    <li>create a new remote with the <strong>git remote add</strong> command</li>
+                    <ul>
+                        <li>use the shortname <strong>upstream</strong> to point to the source repository</li>
+                        <li>provide the URL of the source repository</li>
+                    </ul>
+                    <li>fetch the new upstream remote</li>
+                    <li>merge the upstream's branch into a local branch</li>
+                    <li>push the newly updated local branch to your origin repo</li>
+                </ul>
+                <li><strong>$ git remote rename &ltcurrent name&gt &ltnew name&gt</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Manage an active PR</h3>
+            <ul>
+                <li>Working on an active pull request is mostly about communication</li>
+                <li>If the project's maintainer is requesting changes to the pull request, then:</li>
+                <ul>
+                    <li>make any necessary commits on the same branch in your local repository that your pull request
+                        is based on</li>
+                    <li>push the branch to <em>your</em> fork of the source repository</li>
+                </ul>
+                <li>The commits will then show up on the pull request page</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Squash Commits</h3>
+            <ul>
+                <li><strong>git rebase</strong> command is used to squash commits together</li>
+                <li><strong>git rebase -i HEAD~3</strong></li>
+                <ul>
+                    <li>The <strong>-i</strong> flag stands for "interactive", you can perform a rebase in a
+                        non-interactive mode, however, it is recommended to do interactive rebasing while learning to
+                        rebase</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Course Wrap Up</h3>
+            <ul>
+                <li>Further Resources:</li>
+                <ul>
+                    <li><a href="https://up-for-grabs.net/#/">Up for Grabs</a></li>
+                    <li><a href="https://www.firsttimersonly.com/">First Timers Only</a></li>
+                    <li><a href="https://github.com/search?utf8=%E2%9C%93&q=label%3Afirst-timers-only+is%3Aopen&type=Issues&ref=searchresults">First Timers Only Label on GitHub</a></li>
+                    <li><a href="https://blog.kentcdodds.com/first-timers-only-78281ea47455">First Timers Only Blog Post</a></li>
+                </ul>
+            </ul>
+        </div>
     </div>
 </body>
 
