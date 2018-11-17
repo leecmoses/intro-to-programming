@@ -11,6 +11,35 @@ body {
     font-weight: 300; 
 }
 
+.table {
+    border: .175em solid rgba(211, 211, 211, 0.35);;
+    border-radius: .25em;
+    padding: 0 1.25em;
+    margin-bottom: 2em;
+}
+
+.table ol {
+    margin: 1em 0 1.5em 0;
+    padding-left: 1em;
+}
+
+.table ol li {
+    margin: 1em 0 1em .5em;
+}
+
+.table a {
+    border: none;
+}
+
+.table a:hover {
+    border-bottom: .08em solid rgba(51, 182, 229, 1);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
 .section {
     border: .175em solid rgba(211, 211, 211, 0.35);;
     border-radius: .25em;
