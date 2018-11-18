@@ -60,6 +60,7 @@ a {
     text-decoration: none;
     color: rgba(51, 182, 229, 1);
     border-bottom: .08em solid rgba(51, 182, 229, 1);
+    font-weight: 400;
 }
 
 span {
