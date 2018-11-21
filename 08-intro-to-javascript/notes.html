@@ -838,7 +838,8 @@
         <div>
             <h3>3. Creating an Array</h3>
             <ul>
-                <li>Mixed data arrays are typically not very useful, in most cases, you'll want to use elements of the same type in your arrays</li>
+                <li>Mixed data arrays are typically not very useful, in most cases, you'll want to use elements of the
+                    same type in your arrays</li>
                 <li>You can even store an array in an array to create a <strong>nested array</strong></li>
             </ul>
         </div>
@@ -881,7 +882,9 @@
         <div>
             <h3>9. Array Properties and Methods</h3>
             <ul>
-                <li>Check out <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN Documentation</a>, or type [], into the JS console for a list of all the available Array methods</li>
+                <li>Check out <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN
+                        Documentation</a>, or type [], into the JS console for a list of all the available Array
+                    methods</li>
             </ul>
         </div>
 
@@ -899,7 +902,7 @@
                 <li>You can use the <strong>push()</strong> method to add elements to the end of an array</li>
             </ul>
         </div>
-        
+
         <div>
             <h3>12. Pop</h3>
             <ul>
@@ -911,8 +914,10 @@
         <div>
             <h3>13. Splice</h3>
             <ul>
-                <li><strong>splice()</strong> is another handy method that allows you to add and remove elements from anywhere within an array</li>
-                <li>The splice method lets you specify the index location to add new elements, as well as the number of elements you'd like to delete (if any)</li>
+                <li><strong>splice()</strong> is another handy method that allows you to add and remove elements from
+                    anywhere within an array</li>
+                <li>The splice method lets you specify the index location to add new elements, as well as the number of
+                    elements you'd like to delete (if any)</li>
             </ul>
         </div>
 
@@ -941,7 +946,8 @@
             <h3>17. Quiz: Checking out the Docs (6-7)</h3>
             <ul>
                 <li><strong>shift()</strong> will remove the first element from an array</li>
-                <li><strong>splice()</strong> can be used if you specify the index of the first element, and indicate that you want to delete 1 element</li>
+                <li><strong>splice()</strong> can be used if you specify the index of the first element, and indicate
+                    that you want to delete 1 element</li>
                 <li><strong>join()</strong> can be used to combine the elements in an array to form a string</li>
             </ul>
         </div>
@@ -949,16 +955,19 @@
         <div>
             <h3>18. Array Loops</h3>
             <ul>
-                <li>To loop through an array, you can use a variable to represent the index in the array, and then loop over the index to perform whatever you want</li>
+                <li>To loop through an array, you can use a variable to represent the index in the array, and then loop
+                    over the index to perform whatever you want</li>
             </ul>
         </div>
 
         <div>
             <h3>19. The forEach Loop</h3>
             <ul>
-                <li>The <strong>forEach()</strong> method gives you an alternative way to iterate over an array, and manipulate each element in the array with an inline function expression</li>
+                <li>The <strong>forEach()</strong> method gives you an alternative way to iterate over an array, and
+                    manipulate each element in the array with an inline function expression</li>
                 <li>Notice the forEach() method iterates over the array without the need of an explicitly defined index</li>
-                <li>The function that you pass to the forEach() method can take up to three parameters: element, index, and array</li>
+                <li>The function that you pass to the forEach() method can take up to three parameters: element, index,
+                    and array</li>
             </ul>
         </div>
 
@@ -972,16 +981,19 @@
         <div>
             <h3>21. Map</h3>
             <ul>
-                <li>Using <strong>forEach()</strong> will not be useful if you wan to permanently modify the original array, it will always return <strong>undefined</strong></li>
+                <li>Using <strong>forEach()</strong> will not be useful if you wan to permanently modify the original
+                    array, it will always return <strong>undefined</strong></li>
                 <li>The <strong>map()</strong> method is useful for creating a new array from an existing array</li>
-                <li>You no longer need to iterate over the indices anymore, <strong>map()</strong> does all that work for you</li>
+                <li>You no longer need to iterate over the indices anymore, <strong>map()</strong> does all that work
+                    for you</li>
             </ul>
         </div>
 
         <div>
             <h3>22. Quiz: I Got Bills (6-9)</h3>
             <ul>
-                <li>The <strong>Number()</strong> function converts the object argument to a number that represents the object's value, if the value cannot be converted to a legal number, NaN is returned</li>
+                <li>The <strong>Number()</strong> function converts the object argument to a number that represents the
+                    object's value, if the value cannot be converted to a legal number, NaN is returned</li>
                 <li>Completed exercise</li>
             </ul>
         </div>
@@ -1019,6 +1031,111 @@
 
     <div class="section">
         <h2 id="objects"><span>#</span> Objects</h2>
+        <div>
+            <h3>1. Intro to Objects</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Objects in Code</h3>
+            <ul>
+                <li><strong>typeof</strong> is an operator that returns the name of the data type that follows it</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Quiz: Umbrella (7-1)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Objects</h3>
+            <ul>
+                <li><strong>Primitive Data Types</strong>: strings, numbers, booleans, undefined, null</li>
+                <li><strong>Objects</strong> are a data structure in JS that lets you store data abou a particular
+                    thing, and helps you keep track of that data by using a "key"</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Object Literals</h3>
+            <ul>
+                <li><strong>Object-literal notation</strong> follows the following struturing:</li>
+                <ul>
+                    <li>The "key" (representing a property or method name) and its "value" are separated from each
+                        other by a colon</li>
+                    <li>The Key: value <em>pairs</em> are separated from each other by <strong>commas</strong></li>
+                    <li>The entire object is wrapped inside curly braces <strong>{ }</strong></li>
+                </ul>
+                <li>You can retrieve information about an object with either <strong>bracket notation</strong> or
+                    <strong>dot notation</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Naming Conventions</h3>
+            <ul>
+                <li>Use camelCase for naming variables and objects</li>
+                <li>Names should not begin with a number</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. Summary of Objects</h3>
+            <ul>
+                <li>Objects have properties (information about the object) and methods (functions or capabilities the
+                    object has)</li>
+                <li>You do not need to wrap the key in quotes</li>
+                <li>If a key is a multi-word property, use camelCase</li>
+                <li>Do not use hyphens in property names</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>8. Quiz: Menu Items (7-2)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>9. Quiz: Bank Accounts (7-3)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>10. Quiz: Bank Accounts 2 (7-4)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>11. Quiz: Facebook Friends (7-5)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>12. Quiz: Donuts Revisited (7-6)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>13. Lesson 7 Summary</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
