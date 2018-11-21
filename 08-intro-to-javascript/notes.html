@@ -1140,6 +1140,104 @@
 
     <div class="section">
         <h2 id="dom"><span>#</span> The Document Object Model</h2>
+        <div>
+            <h3>1. Introduction</h3>
+            <ul>
+                <li>HTML and CSS are static, use JS to manipulate the DOM to make a website more dynamic</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. The DOM</h3>
+            <ul>
+                <li>The DOM stands for Document Object Model, it is the full, parsed representation of the HTML document, the relationship between elements, and contains the content and properties of the elements</li>
+                <li>The DOM is <em>not</em> part of the JavaScript language, the DOM is constructed from the browser and is globally accessible by JavaScript code using the document object</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. A CSS Mindset</h3>
+            <ul>
+                <li>Use the <strong>#</strong> at the beginning of the selector to target an element by its ID</li>
+                <li>Use the <strong>.</strong> (the period) at the beginning of the selector to target elements by their class</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Select Page Element By ID</h3>
+            <ul>
+                <li><strong>document.getElementById();</strong></li>
+                <ul>
+                    <li>Need to pass the ID of the element that we want it to find and subsequently return to us</li>
+                    <li>It already knows that we are searching for an ID, so the # is unnecessary</li>
+                    <li>The method is called on the document object</li>
+                    <li>it returns a single item</li>
+                </ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">To read more about the method</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Select Page Elements By Class or Tag</h3>
+            <ul>
+                <li><strong>.getElementsByClassName();</strong></li>
+                <li><strong>.getElementsByTagName();</strong></li>
+                <ul>
+                    <li>Both methods use the document object</li>
+                    <li>Both returns multiple items</li>
+                    <li>The list that's returned is not an array</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Nodes, Elements, and Interfaces... Oh My!</h3>
+            <ul>
+                <li>characters -&gt tags -&gt tokens -&gt nodes -&gt DOM</li>
+                <li>Node = Class, node = object</li>
+                <li>Node (with a capital "N") is a blueprint that contains information about all of the properties and methods for real notes (with lowercase "n")</li>
+                <ul>
+                    <li>interface = blueprint</li>
+                    <li>properties = data</li>
+                    <li>methods = functionality</li>
+                </ul>
+                <li>Just like the Node Interface, the Element Interface is a blueprint for creating elements</li>
+                <li>The Element Interface is a descendent of the Node Interface</li>
+                <li><strong>.outerHTML</strong> is a property on the Element Interface</li>
+                <li><strong>.id</strong> is a property on the Element Interface</li>
+                <li><strong>.textContent</strong> is a property on the Node Interface</li>
+                <li>The Element Interface has its own <strong>.getElementsByClassName()</strong> that does the exact same thing as the one on the <strong>document</strong> object</li>
+                <ul>
+                    <li>This means you can use the document object to select an element, <em>then</em> you can call <strong>.getElementsByClassName()</strong> on that element to receive a list of elements with the class name that are descendents of that specific element!</li>
+                </ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">list of Web API Interfaces</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. More Ways To Access Elements</h3>
+            <ul>
+                <li>Not all browsers support every standard, that's why almost every method on MDN has a Browser compatiability table that lists when each browser started supporting that specific method</li>
+                <li>jQuery has diminished in popularity over the years due to native DOM methods</li>
+                <li><strong>document.querySelector();</strong></li>
+                <ul>
+                    <li>returns a single element</li>
+                </ul>
+                <li><strong>document.querySelectorAll();</strong></li>
+                <ul>
+                    <li>returns a list of elements</li>
+                    <li>The list that is returned is a NodeList</li>
+                    <li>It is possible to loop over a NodeList with either its .forEach() method, or a for loop</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>8. Lesson Summary</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
