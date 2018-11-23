@@ -51,7 +51,7 @@
         <div>
             <h3>3. The JavaScript Console</h3>
             <ul>
-                <li><a href="https://developers.google.com/web/tools/chrome-devtools/shortcuts">Chrome Dev Tools
+                <li><a href="https://developers.google.com/web/tools/chrome-devtools/shortcuts" target="_blank">Chrome Dev Tools
                         Keyboard Shortcuts</a></li>
             </ul>
         </div>
@@ -59,7 +59,7 @@
         <div>
             <h3>4. Developer Tools on Different Browsers</h3>
             <ul>
-                <li><a href="https://developers.google.com/web/tools/chrome-devtools/">Google Chrome DevTools</a></li>
+                <li><a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank">Google Chrome DevTools</a></li>
             </ul>
         </div>
 
@@ -166,7 +166,7 @@
             <h3>11. Comparing Strings</h3>
             <ul>
                 <li>Lowercase letters have higher numerical values in the ASCII table than uppercase letters</li>
-                <li><a href="https://www.ascii-code.com/">ASCII table</a></li>
+                <li><a href="https://www.ascii-code.com/" target="_blank">ASCII table</a></li>
             </ul>
         </div>
 
@@ -882,7 +882,7 @@
         <div>
             <h3>9. Array Properties and Methods</h3>
             <ul>
-                <li>Check out <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN
+                <li>Check out <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">MDN
                         Documentation</a>, or type [], into the JS console for a list of all the available Array
                     methods</li>
             </ul>
@@ -1177,7 +1177,7 @@
                     <li>The method is called on the document object</li>
                     <li>it returns a single item</li>
                 </ul>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">To read more
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById" target="_blank">To read more
                         about the method</a></li>
             </ul>
         </div>
@@ -1211,7 +1211,7 @@
                 <li>The Element Interface is a descendent of the Node Interface</li>
                 <li><strong>.outerHTML</strong> is a property on the Element Interface</li>
                 <li><strong>.id</strong> is a property on the Element Interface</li>
-                <li><strong>.textContent</strong> is a property on the Node Interface</li>
+                <li><strong>.text</strong> is a property on the Node Interface</li>
                 <li>The Element Interface has its own <strong>.getElementsByClassName()</strong> that does the exact
                     same thing as the one on the <strong>document</strong> object</li>
                 <ul>
@@ -1219,7 +1219,7 @@
                         <strong>.getElementsByClassName()</strong> on that element to receive a list of elements with
                         the class name that are descendents of that specific element!</li>
                 </ul>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">list of Web API Interfaces</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">list of Web API Interfaces</a></li>
             </ul>
         </div>
 
@@ -1363,17 +1363,84 @@
                     <li>The type of event to listen for - the <strong>type</strong></li>
                     <li>A function to run when the event occurs - <strong>listener</strong></li>
                 </ul>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events">List of events</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">List of events</a></li>
             </ul>
         </div>
 
         <div>
             <h3>3. Remove an Event Listener</h3>
             <ul>
-                <li></li>
+                <li><strong>.removeEventListener()</strong></li>
+                <li>So an event listener needs three things:</li>
+                <ol>
+                    <li>An event target - this is called the <strong>target</strong></li>
+                    <li>The type of event to listen for - this is called the <strong>type</strong></li>
+                    <li>The function to remove - this is called the <strong>listener</strong></li>
+                </ol>
+                <li>The <em>listener</em> function must be the <em>exact</em> same function as the one used in the <strong>.addEventListener()</strong> call... not just an identical looking function</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener" target="_blank">removeEventListener on MDN</a></li>
+                <li><a href="https://developers.google.com/web/updates/2015/05/easily-jump-to-event-listeners" target="_blank">Easily jump to event listeners</a></li>
+                <li><a href="http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html" target="_blank">Article: Object Equality in JavaScript</a></li>
             </ul>
         </div>
 
+        <div>
+            <h3>4. Quiz: Phases of an Event</h3>
+            <ul>
+                <li>There are three different phases during the lifecycle of an event:</li>
+                <ul>
+                    <li>the <strong>capturing</strong> phase</li>
+                    <li>the <strong>at target</strong> phase</li>
+                    <li>and the <strong>bubbling</strong> phase</li>
+                </ul>
+                <li>Most event handlers run during the <strong>at target</strong> phase</li>
+                <li>By default, if you click on a child item and a handler doesn't intercept the click, the event will "bubble" upward to the parent, and keep bubbling until something handles it or it hits the document</li>
+                <li>Capturing, on the other hand, lets the parent intercept an event before it reaches a child</li>
+                <li>There's actually a <em>third</em> argument to the <strong>.addEventListener()</strong> method; the <em>useCapture</em> argument</li>
+                <ul>
+                    <li>Having true as the third argument should invoke the listener earlier, during the capture phase</li>
+                    <li>By default, when it is called with only two arguments, the method defaults to using the <strong>bubbling</strong> phase</li>
+                </ul>
+                <li>Prevent the default action on an event object with <strong>.preventDefault()</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Avoid Too Many Events</h3>
+            <ul>
+                <li><strong>Event Delegation</strong> is the process of delegating to a parent element the ability to manage events for child elements, this is done by making use of the event object and <strong>.target</strong> property and the different phases of an event</li>
+                <li>The <strong>.nodeName</strong> property will return a <em>capital</em> string, not a <em>lowercase</em> one</li>
+                <li>So when you perform your check make sure to either:</li>
+                <ul>
+                    <li>check for capital letters</li>
+                    <li>convert the <strong>.nodeName</strong> to lowercase</li>
+                </ul>
+                <li><a href="https://javascript.info/event-delegation" target="_blank">Article: Event delegation</a></li>
+                <li><a href="https://davidwalsh.name/event-delegate" target="_blank">Article: How JavaScript Event Delegation Works</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Know When The DOM Is Ready</h3>
+            <ul>
+                <li>The placement of the JavaScript file matters!</li>
+                <li>When the document object model has been fully loaded, the browser will fire an event called the <strong>DOMContentLoaded</strong> event, and we can listen for it the same way we listen to any other events</li>
+                <li>The target of the <strong>DOMContentLoaded</strong> event is the <strong>document</strong> object</li>
+                <li>The <strong>DOMContentLoaded</strong> event allows the JS code to stay in the <strong>&lthead&gt</strong></li>
+                <li>Many older developers use <strong>load</strong> in place of <strong>DOMContentLoaded</strong> as the latter wasn't supported by the very earliest browsers</li>
+                <li><strong>document.onload(...)</strong> waits until all of the images, stylesheets, etc. have been loaded (everything referenced by the HTML)</li>
+                <li><strong>DOMContentLoaded</strong> is <em>generally</em> the better choice to detect when your code can run</li>
+                <li>Just because you can use the <strong>DOMContentLoaded</strong> event to write JS code in the <strong>&lthead&gt</strong> doesn't mean you should do this, generally better to move the code to the bottom of the HTML file just before the closing <strong>&lt/body&gt</strong></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded" target="_blank">DOMContentLoaded Event docs on MDN</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. Lesson Summary</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
     </div>
 </body>
 
